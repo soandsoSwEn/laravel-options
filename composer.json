@@ -1,0 +1,55 @@
+{
+    "name": "soandso/laravel-options",
+    "description": "Laravel service for storing key-value structure data",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "option",
+        "store option"
+    ],
+    "authors": [
+        {
+            "name": "Dmytriyenko Vyacheslav",
+            "email": "dmytriyenko.vyacheslav@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Soandso\\LaravelOptions\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Soandso\\LaravelOptions\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php ./vendor/bin/testbench package:discover --ansi"
+        ],
+        "tests": [
+            "php ./vendor/bin/phpunit"
+        ]
+    },
+    "require": {
+        "php": "^8.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.5",
+        "orchestra/testbench": "8.0.x-dev"
+    },
+    "config" : {
+        "sort-packages" : true
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Soandso\\LaravelOptions\\OptionProvider"
+            ],
+            "aliases": [
+                "Soandso\\LaravelOptions\\Option"
+            ]
+        }
+    }
+}
