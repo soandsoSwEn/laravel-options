@@ -1,6 +1,6 @@
 {
     "name": "soandso/laravel-options",
-    "description": "Laravel service for storing key-value structure data",
+    "description": "Laravel service for global storing key-value structure data",
     "type": "library",
     "license": "MIT",
     "keywords": [
