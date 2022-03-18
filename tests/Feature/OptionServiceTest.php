@@ -2,6 +2,7 @@
 
 namespace Soandso\LaravelOptions\Tests\Feature;
 
+use ArgumentCountError;
 use Exception;
 use Soandso\LaravelOptions\OptionService;
 use Soandso\LaravelOptions\Tests\TestCase;
@@ -23,20 +24,17 @@ class OptionServiceTest extends TestCase
         ];
         $result = $method->invokeArgs($this->optionService, $data);
 
-        $this->assertEquals($result, 1);
+        $this->assertTrue($result);
     }
 
     public function testErrorCreateOption()
     {
+        $this->expectException(ArgumentCountError::class);
         $reflector = new \ReflectionClass(OptionService::class);
         $method = $reflector->getMethod('createData');
-        $method->setAccessible(true);
-        $data = [
-            'key-1', 'value-data-1',
-        ];
-        $result = $method->invokeArgs($this->optionService, $data);
-
-        $this->assertNotEquals($result, 2);
+        $method->setAccessible(false);
+        $data = [];
+        $method->invokeArgs($this->optionService, $data);
     }
 
     public function testSuccessUpdateData()

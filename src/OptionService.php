@@ -19,7 +19,7 @@ class OptionService
      *
      * @param string $key Parameter key
      * @param string|array $value Parameter value
-     * @return int Id of the created parameter or the number of updated values (if the parameter already existed)
+     * @return bool
      * @throws Exception
      */
     public function setData(string $key, $value)
@@ -57,16 +57,18 @@ class OptionService
      *
      * @param string $key Parameter key
      * @param string|array $valueData Parameter value
-     * @return int
+     * @return bool
      */
-    protected function createData(string $key, $valueData) : int
+    protected function createData(string $key, $valueData) : bool
     {
-        $option = Option::create([
+        if (Option::create([
             'key' => $key,
             'value' => json_encode($valueData),
-        ]);
+        ])) {
+            return true;
+        }
 
-        return $option->id;
+        return false;
     }
 
     /**
@@ -74,11 +76,15 @@ class OptionService
      *
      * @param string $key Parameter key
      * @param string|array $value Parameter value
-     * @return int
+     * @return bool
      */
-    protected function updateData(string $key, $value) : int
+    protected function updateData(string $key, $value) : bool
     {
-        return Option::where('key', $key)->update(['value' => json_encode($value)]);
+        if (Option::where('key', $key)->update(['value' => json_encode($value)]) === false) {
+            return false;
+        }
+
+        return true;
     }
 
     /**
