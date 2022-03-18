@@ -47,9 +47,9 @@
             "providers": [
                 "Soandso\\LaravelOptions\\OptionProvider"
             ],
-            "aliases": [
-                "Soandso\\LaravelOptions\\Option"
-            ]
+            "aliases": {
+                "Option": "Soandso\\LaravelOptions\\Option"
+            }
         }
     }
 }
