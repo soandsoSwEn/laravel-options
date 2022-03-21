@@ -22,13 +22,13 @@ class OptionService
      * @return bool
      * @throws Exception
      */
-    public function setData(string $key, $value)
+    public function set(string $key, $value) : bool
     {
         if ($this->isValidData($value) === false) {
             throw new Exception('The data format is not supported. Available string and array');
         }
 
-        if ($this->getData($key) !== false) {
+        if ($this->get($key) !== false) {
             return $this->updateData($key, $value);
         } else {
             return $this->createData($key, $value);
@@ -41,7 +41,7 @@ class OptionService
      * @param string $key Parameter key
      * @return false|mixed
      */
-    public function getData(string $key)
+    public function get(string $key)
     {
         $option = Option::select(['value'])->where('key', $key)->first();
         if (is_null($option)) {

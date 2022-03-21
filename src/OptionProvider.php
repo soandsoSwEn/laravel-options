@@ -13,7 +13,11 @@ class OptionProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/../database/migrations/create_options_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_options_table.php'),
+            ], 'migrations');
+        }
     }
 
     /**
