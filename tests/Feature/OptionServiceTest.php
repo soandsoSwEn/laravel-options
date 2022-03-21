@@ -95,30 +95,30 @@ class OptionServiceTest extends TestCase
 
     public function testSuccessSetDataForCreateMethod()
     {
-        $this->assertEquals($this->optionService->setData('key-1', 'value-data-1'), 1);
+        $this->assertEquals($this->optionService->set('key-1', 'value-data-1'), 1);
     }
 
     public function testSuccessSetDataForUpdateMethod()
     {
-        $this->optionService->setData('key-1', 'value-data-1');
-        $this->assertEquals($this->optionService->setData('key-1', 'value-data-2'), 1);
+        $this->optionService->set('key-1', 'value-data-1');
+        $this->assertEquals($this->optionService->set('key-1', 'value-data-2'), 1);
     }
 
     public function testNotValidDataSetData()
     {
         $this->expectException(Exception::class);
-        $this->optionService->setData('key-1', 1);
+        $this->optionService->set('key-1', 1);
     }
 
     public function testSuccessGetData()
     {
-        $this->optionService->setData('key-1', 'value-data-1');
-        $this->assertEquals($this->optionService->getData('key-1'), 'value-data-1');
+        $this->optionService->set('key-1', 'value-data-1');
+        $this->assertEquals($this->optionService->get('key-1'), 'value-data-1');
     }
 
     public function testErrorGetData()
     {
-        $this->optionService->setData('key-1', 'value-data-1');
-        $this->assertNotEquals($this->optionService->getData('key-1'), 'value-data-2');
+        $this->optionService->set('key-1', 'value-data-1');
+        $this->assertNotEquals($this->optionService->get('key-1'), 'value-data-2');
     }
 }
