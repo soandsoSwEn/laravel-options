@@ -17,7 +17,7 @@
             "Soandso\\LaravelOptions\\": "src/"
         },
         "files": [
-            "app/Helpers/Option.php"
+            "src/Helpers/Option.php"
         ]
     },
     "autoload-dev": {
