@@ -15,7 +15,10 @@
     "autoload": {
         "psr-4": {
             "Soandso\\LaravelOptions\\": "src/"
-        }
+        },
+        "files": [
+            "app/Helpers/Option.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

@@ -52,6 +52,8 @@ use Soandso\LaravelOptions\Option;
 Option::set($key, $value);
 ```
 
+The method returns ```true``` in case of successful setting of the parameter value or ```false``` in case of an error
+
 Get parameter value:
 
 ```php
