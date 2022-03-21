@@ -34,6 +34,8 @@ You can also use composer on the command line to require and install Grouping:
 $ php composer.phar require soandso/laravel-options
 ```
 
+You should publish the migration with ```php artisan vendor:publish --provider="Soandso\LaravelOptions\OptionProvider" ```
+
 Run ```php artisan migrate``` to migrate the table.
 
 Usage
