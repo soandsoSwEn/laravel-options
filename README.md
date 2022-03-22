@@ -46,7 +46,7 @@ Set parameter value:
 The parameter key must be unique to the Option entity
 Formats available for the parameter value - string, array
 
-###Facade
+### Facade
 
 ```php
 use Soandso\LaravelOptions\Option;
@@ -64,7 +64,7 @@ Option::get($key);
 
 If there is no parameter for the specified key, the method will return ```false```
 
-###Helper function
+### Helper function
 
 With helper ```setOption()``` you can set options
 ```php
@@ -76,7 +76,7 @@ helper ```getOption()``` will return the value of the option by its key
 getOption($key)
 ````
 
-###Console
+### Console
 
 The command to delete parameters is available in the console.
 ```php
