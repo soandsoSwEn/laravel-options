@@ -3,6 +3,7 @@
 namespace Soandso\LaravelOptions;
 
 use Illuminate\Support\ServiceProvider;
+use Soandso\LaravelOptions\Console\ClearOption;
 
 class OptionProvider extends ServiceProvider
 {
@@ -17,6 +18,10 @@ class OptionProvider extends ServiceProvider
             $this->publishes([
                 __DIR__ . '/../database/migrations/create_options_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_options_table.php'),
             ], 'migrations');
+
+            $this->commands([
+                ClearOption::class,
+            ]);
         }
     }
 
