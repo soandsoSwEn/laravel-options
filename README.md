@@ -46,6 +46,8 @@ Set parameter value:
 The parameter key must be unique to the Option entity
 Formats available for the parameter value - string, array
 
+###Facade
+
 ```php
 use Soandso\LaravelOptions\Option;
 
@@ -59,6 +61,34 @@ Get parameter value:
 ```php
 Option::get($key);
 ```
+
+If there is no parameter for the specified key, the method will return ```false```
+
+###Helper function
+
+With helper ```setOption()``` you can set options
+```php
+setOption($key, $value)
+```
+
+helper ```getOption()``` will return the value of the option by its key
+```php
+getOption($key)
+````
+
+###Console
+
+The command to delete parameters is available in the console.
+```php
+ php artisan option:clear
+ ```
+This command will delete all data. You can restrict deletion by the date of creation or last update of the parameter
+```php
+ php artisan option:clear <date>
+ ```
+Date must be in ```Y-m-d``` format. In this case, all parameters that are older than the specified date will be deleted.
+
+
 
 License
 -------
