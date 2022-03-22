@@ -27,6 +27,7 @@ class ClearOption extends Command
         if ($this->confirm('Are you sure you want to delete the specified entries? Deletion without the possibility of recovery', true)) {
             ClearOptionsJob::dispatch($date);
             $this->info('Delete records started! It can take some time');
+            return true;
         }
 
         $this->error('Delete entries cancelled!');
