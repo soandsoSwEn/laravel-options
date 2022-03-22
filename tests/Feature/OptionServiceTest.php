@@ -121,4 +121,28 @@ class OptionServiceTest extends TestCase
         $this->optionService->set('key-1', 'value-data-1');
         $this->assertNotEquals($this->optionService->get('key-1'), 'value-data-2');
     }
+
+    public function testSuccessAllDestroy()
+    {
+        $this->optionService->set('key-1', 'value-data-1');
+        $this->optionService->destroy();
+
+        $this->assertFalse($this->optionService->get('key-1'));
+    }
+
+    public function testSuccessOneDestroy()
+    {
+        $this->optionService->set('key-1', 'value-data-1');
+        $this->optionService->destroy('2022-03-23');
+
+        $this->assertFalse($this->optionService->get('key-1'));
+    }
+
+    public function testSuccessDestroy()
+    {
+        $this->optionService->set('key-1', 'value-data-1');
+        $this->optionService->destroy('2022-03-22');
+
+        $this->assertEquals($this->optionService->get('key-1'), 'value-data-1');
+    }
 }

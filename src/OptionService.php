@@ -105,4 +105,32 @@ class OptionService
 
         return false;
     }
+
+    /**
+     * Deletes parameter entries
+     *
+     * All entries older than the specified date are deleted.
+     * If the date is not specified, then all parameters are deleted.
+     *
+     * @param string|null $date
+     * @return bool
+     */
+    public function destroy(string $date = null) : bool
+    {
+        if (app()->runningInConsole() === false) {
+            return false;
+        }
+
+        if (is_null($date)) {
+            if (Option::query()->delete() === false) {
+                return false;
+            }
+        } else {
+            if (Option::where('updated_at', '<', $date)->delete() === false) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
