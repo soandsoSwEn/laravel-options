@@ -3,6 +3,7 @@
 namespace Soandso\LaravelOptions\Tests\Feature;
 
 use ArgumentCountError;
+use Carbon\Carbon;
 use Exception;
 use Soandso\LaravelOptions\OptionService;
 use Soandso\LaravelOptions\Tests\TestCase;
@@ -133,7 +134,8 @@ class OptionServiceTest extends TestCase
     public function testSuccessOneDestroy()
     {
         $this->optionService->set('key-1', 'value-data-1');
-        $this->optionService->destroy('2022-03-23');
+        $date = Carbon::today()->addDay(1);
+        $this->optionService->destroy(date('Y-m-d', strtotime($date)));
 
         $this->assertFalse($this->optionService->get('key-1'));
     }
@@ -141,7 +143,8 @@ class OptionServiceTest extends TestCase
     public function testSuccessDestroy()
     {
         $this->optionService->set('key-1', 'value-data-1');
-        $this->optionService->destroy('2022-03-22');
+        $date = Carbon::today()->addDay(-1);
+        $this->optionService->destroy(date('Y-m-d', strtotime($date)));
 
         $this->assertEquals($this->optionService->get('key-1'), 'value-data-1');
     }
