@@ -26,7 +26,7 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Generate clover coverage report
-        run: phpunit --coverage-clover build/logs/clover.xml
+        run: vendor/bin/phpunit --coverage-clover build/logs/clover.xml
 
       # Runs a single command using the runners shell
       - name: Upload coverage results to Coveralls
