@@ -133,4 +133,34 @@ class OptionService
 
         return true;
     }
+
+    /**
+     * Deletes a parameter by its key
+     *
+     * @param string $key Parameter key
+     * @return bool
+     */
+    public function destroyByKey(string $key) : bool
+    {
+        if (Option::where('key', $key)->delete()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Checks if the parameter with the given key exists
+     *
+     * @param string $key Parameter key
+     * @return bool
+     */
+    public function exists(string $key) : bool
+    {
+        if (is_null(Option::where('key', $key)->first())) {
+            return false;
+        }
+
+        return true;
+    }
 }
