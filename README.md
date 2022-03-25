@@ -76,6 +76,16 @@ helper ```getOption()``` will return the value of the option by its key
 getOption($key)
 ````
 
+Helper function ```existsOption()``` checks if the parameter with the given key exists
+```php
+existsOption($key)
+```
+
+Function ```destroyOption``` deletes a parameter by its key
+```php
+destroyOption($key)
+```
+
 ### Console
 
 The command to delete parameters is available in the console.
