@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<coverage generated="1648228998">
-  <project timestamp="1648228998">
-=======
-<coverage generated="1648215573">
-  <project timestamp="1648215573">
->>>>>>> 8ed193c... added report of tests
+<coverage generated="1648231711">
+  <project timestamp="1648231711">
     <file name="C:\OpenServer\domains\options.local\src\Console\ClearOption.php">
       <class name="Soandso\LaravelOptions\Console\ClearOption" namespace="global">
         <metrics complexity="8" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="0" elements="19" coveredelements="0"/>
