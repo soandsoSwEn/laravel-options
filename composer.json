@@ -38,8 +38,7 @@
     },
     "require-dev": {
         "mockery/mockery": "^1.5",
-        "orchestra/testbench": "8.0.x-dev",
-        "php-coveralls/php-coveralls": "dev-master"
+        "orchestra/testbench": "8.0.x-dev"
     },
     "config" : {
         "sort-packages" : true
