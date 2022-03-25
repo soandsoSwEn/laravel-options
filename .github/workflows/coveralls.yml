@@ -34,7 +34,7 @@ jobs:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
         run: |
           composer global require phpunit/phpunit
-          vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+          phpunit --coverage-clover build/logs/clover.xml
           composer global require php-coveralls/php-coveralls
-          vendor/bin/phpunit php-coveralls --coverage_clover=build/logs/clover.xml -v
+          php-coveralls --coverage_clover=build/logs/clover.xml -v
           
