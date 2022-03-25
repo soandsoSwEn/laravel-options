@@ -23,6 +23,9 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
+        with:
+          php-version: '8.1'
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
@@ -31,7 +34,7 @@ jobs:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
         run: |
           composer global require phpunit/phpunit
-          phpunit --coverage-clover build/logs/clover.xml
+          vendor/bin/phpunit --coverage-clover build/logs/clover.xml
           composer global require php-coveralls/php-coveralls
-          php-coveralls --coverage_clover=build/logs/clover.xml -v
+          vendor/bin/phpunit php-coveralls --coverage_clover=build/logs/clover.xml -v
           
