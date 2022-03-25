@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1648228998">
-  <project timestamp="1648228998">
+<coverage generated="1648238052">
+  <project timestamp="1648238052">
     <file name="C:\OpenServer\domains\options.local\src\Console\ClearOption.php">
       <class name="Soandso\LaravelOptions\Console\ClearOption" namespace="global">
         <metrics complexity="8" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="0" elements="19" coveredelements="0"/>
@@ -29,7 +29,9 @@
     <file name="C:\OpenServer\domains\options.local\src\Helpers\Option.php">
       <line num="16" type="stmt" count="0"/>
       <line num="30" type="stmt" count="0"/>
-      <metrics loc="32" ncloc="17" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="2" coveredelements="0"/>
+      <line num="42" type="stmt" count="0"/>
+      <line num="54" type="stmt" count="0"/>
+      <metrics loc="56" ncloc="29" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="4" coveredelements="0"/>
     </file>
     <file name="C:\OpenServer\domains\options.local\src\Jobs\ClearOptionsJob.php">
       <class name="Soandso\LaravelOptions\Jobs\ClearOptionsJob" namespace="global">
@@ -60,43 +62,43 @@
       <class name="Soandso\LaravelOptions\OptionProvider" namespace="global">
         <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
       </class>
-      <line num="15" type="method" name="boot" visibility="public" complexity="2" crap="2" count="21"/>
-      <line num="17" type="stmt" count="21"/>
-      <line num="18" type="stmt" count="21"/>
-      <line num="19" type="stmt" count="21"/>
-      <line num="22" type="stmt" count="21"/>
-      <line num="33" type="method" name="register" visibility="public" complexity="1" crap="1" count="21"/>
-      <line num="35" type="stmt" count="21"/>
+      <line num="15" type="method" name="boot" visibility="public" complexity="2" crap="2" count="26"/>
+      <line num="17" type="stmt" count="26"/>
+      <line num="18" type="stmt" count="26"/>
+      <line num="19" type="stmt" count="26"/>
+      <line num="22" type="stmt" count="26"/>
+      <line num="33" type="method" name="register" visibility="public" complexity="1" crap="1" count="26"/>
+      <line num="35" type="stmt" count="26"/>
       <metrics loc="37" ncloc="27" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
     </file>
     <file name="C:\OpenServer\domains\options.local\src\OptionService.php">
       <class name="Soandso\LaravelOptions\OptionService" namespace="global">
-        <metrics complexity="17" methods="6" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="26" elements="36" coveredelements="29"/>
+        <metrics complexity="21" methods="8" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="36" coveredstatements="32" elements="44" coveredelements="37"/>
       </class>
-      <line num="25" type="method" name="set" visibility="public" complexity="3" crap="3" count="8"/>
-      <line num="27" type="stmt" count="8"/>
+      <line num="25" type="method" name="set" visibility="public" complexity="3" crap="3" count="11"/>
+      <line num="27" type="stmt" count="11"/>
       <line num="28" type="stmt" count="1"/>
-      <line num="31" type="stmt" count="7"/>
+      <line num="31" type="stmt" count="10"/>
       <line num="32" type="stmt" count="1"/>
-      <line num="34" type="stmt" count="7"/>
-      <line num="44" type="method" name="get" visibility="public" complexity="2" crap="2" count="7"/>
-      <line num="46" type="stmt" count="7"/>
-      <line num="47" type="stmt" count="7"/>
-      <line num="48" type="stmt" count="7"/>
+      <line num="34" type="stmt" count="10"/>
+      <line num="44" type="method" name="get" visibility="public" complexity="2" crap="2" count="10"/>
+      <line num="46" type="stmt" count="10"/>
+      <line num="47" type="stmt" count="10"/>
+      <line num="48" type="stmt" count="10"/>
       <line num="51" type="stmt" count="4"/>
       <line num="52" type="stmt" count="4"/>
-      <line num="62" type="method" name="createData" visibility="protected" complexity="2" crap="2.06" count="9"/>
-      <line num="64" type="stmt" count="9"/>
-      <line num="66" type="stmt" count="9"/>
-      <line num="68" type="stmt" count="9"/>
+      <line num="62" type="method" name="createData" visibility="protected" complexity="2" crap="2.06" count="12"/>
+      <line num="64" type="stmt" count="12"/>
+      <line num="66" type="stmt" count="12"/>
+      <line num="68" type="stmt" count="12"/>
       <line num="71" type="stmt" count="0"/>
       <line num="81" type="method" name="updateData" visibility="protected" complexity="2" crap="2.15" count="2"/>
       <line num="83" type="stmt" count="2"/>
       <line num="84" type="stmt" count="0"/>
       <line num="87" type="stmt" count="2"/>
-      <line num="96" type="method" name="isValidData" visibility="protected" complexity="3" crap="3" count="11"/>
-      <line num="98" type="stmt" count="11"/>
-      <line num="99" type="stmt" count="8"/>
+      <line num="96" type="method" name="isValidData" visibility="protected" complexity="3" crap="3" count="14"/>
+      <line num="98" type="stmt" count="14"/>
+      <line num="99" type="stmt" count="11"/>
       <line num="102" type="stmt" count="3"/>
       <line num="103" type="stmt" count="1"/>
       <line num="106" type="stmt" count="2"/>
@@ -109,8 +111,16 @@
       <line num="129" type="stmt" count="2"/>
       <line num="130" type="stmt" count="0"/>
       <line num="134" type="stmt" count="3"/>
-      <metrics loc="136" ncloc="86" classes="1" methods="6" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="26" elements="36" coveredelements="29"/>
+      <line num="143" type="method" name="destroyByKey" visibility="public" complexity="2" crap="2" count="3"/>
+      <line num="145" type="stmt" count="3"/>
+      <line num="146" type="stmt" count="2"/>
+      <line num="149" type="stmt" count="1"/>
+      <line num="158" type="method" name="exists" visibility="public" complexity="2" crap="2" count="2"/>
+      <line num="160" type="stmt" count="2"/>
+      <line num="161" type="stmt" count="1"/>
+      <line num="164" type="stmt" count="1"/>
+      <metrics loc="166" ncloc="104" classes="1" methods="8" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="36" coveredstatements="32" elements="44" coveredelements="37"/>
     </file>
-    <metrics files="7" loc="319" ncloc="234" classes="5" methods="13" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="58" coveredstatements="31" elements="71" coveredelements="36"/>
+    <metrics files="7" loc="373" ncloc="264" classes="5" methods="15" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="66" coveredstatements="37" elements="81" coveredelements="44"/>
   </project>
 </coverage>

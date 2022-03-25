@@ -1,3 +1,12 @@
+![GitHub](https://img.shields.io/github/license/soandsoSwEn/laravel-options)
+![GitHub Workflow Status (event)](https://img.shields.io/github/workflow/status/soandsoSwEn/laravel-options/PHP%20Composer)
+![GitHub top language](https://img.shields.io/github/languages/top/soandsoSwEn/laravel-options)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/soandsoSwEn/laravel-options)
+![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/soandso/laravel-options)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/soandsoSwEn/laravel-options)
+![GitHub Release Date](https://img.shields.io/github/release-date/soandsoSwEn/laravel-options)
+![Codacy coverage](https://img.shields.io/codacy/coverage/4cf6615e8d76442cae636cdb42f2d09b)
+
 Laravel options
 ========================================
 
@@ -41,12 +50,12 @@ Run ```php artisan migrate``` to migrate the table.
 Usage
 -----
 
+### Facade
+
 Set parameter value:
 
 The parameter key must be unique to the Option entity
 Formats available for the parameter value - string, array
-
-### Facade
 
 ```php
 use Soandso\LaravelOptions\Option;
@@ -64,6 +73,18 @@ Option::get($key);
 
 If there is no parameter for the specified key, the method will return ```false```
 
+Check if the parameter with the given key exists
+```php
+Option::exists($key);
+```
+Returns ```true``` or ```false``` depending on the result
+
+Delete a parameter by its key
+```php
+Option::destroyByKey($key);
+```
+Returns ```true``` if deletion was successful, ```false``` if deletion failed.
+
 ### Helper function
 
 With helper ```setOption()``` you can set options
@@ -75,6 +96,16 @@ helper ```getOption()``` will return the value of the option by its key
 ```php
 getOption($key)
 ````
+
+Helper function ```existsOption()``` checks if the parameter with the given key exists
+```php
+existsOption($key)
+```
+
+Function ```destroyOption``` deletes a parameter by its key
+```php
+destroyOption($key)
+```
 
 ### Console
 

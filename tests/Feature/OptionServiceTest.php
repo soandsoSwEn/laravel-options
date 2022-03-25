@@ -148,4 +148,35 @@ class OptionServiceTest extends TestCase
 
         $this->assertEquals($this->optionService->get('key-1'), 'value-data-1');
     }
+
+    public function testSuccessDestroyByKey()
+    {
+        $this->optionService->set('key-1', 'value-data-1');
+        $this->optionService->destroyByKey('key-1');
+
+        $this->assertFalse($this->optionService->get('key-1'));
+    }
+
+    public function testSuccessResponseDestroyByKey()
+    {
+        $this->optionService->set('key-1', 'value-data-1');
+
+        $this->assertTrue($this->optionService->destroyByKey('key-1'));
+    }
+
+    public function testErrorReturnDestroyByKey()
+    {
+        $this->assertFalse($this->optionService->destroyByKey('key-1'));
+    }
+
+    public function testExists()
+    {
+        $this->optionService->set('key-1', 'value-data-1');
+        $this->assertTrue($this->optionService->exists('key-1'));
+    }
+
+    public function testNotExists()
+    {
+        $this->assertFalse($this->optionService->exists('key-1'));
+    }
 }
